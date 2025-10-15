@@ -1,0 +1,9 @@
+# backend/.gitignore
+config/client_secret.json
+config/.env
+venv/
+__pycache__/
+*.pyc
+data/translation_cache/
+data/chroma_db_api/
+data/chroma_db_classification/

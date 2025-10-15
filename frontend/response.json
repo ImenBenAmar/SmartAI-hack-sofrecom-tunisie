@@ -1,0 +1,13 @@
+{
+  "main_subject": "Main topic",
+  "short_summary": "One-sentence summary",
+  "email_type": "Meeting Planning | Action Request | Information | Reply | Report | Social | Event | Other",
+  "participants": ["list of people mentioned"],
+  "sentiment": "Positive | Negative | Neutral",
+  "urgency": {
+    "is_urgent": true,
+    "justification": "Explanation"
+  },
+  "original_subject": "...",
+  "original_message": "..."
+}

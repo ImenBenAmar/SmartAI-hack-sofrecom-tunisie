@@ -1,0 +1,136 @@
+/* Import Boosted (Orange's Bootstrap) CSS */
+@import "boosted/dist/css/boosted.min.css";
+
+/* Use Bootstrap CSS variables so data-bs-theme controls colors */
+body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+/* Theme switcher: subtle hover emphasis for icons/items */
+.dropdown-menu .dropdown-item .theme-icon {
+  filter: grayscale(20%);
+  transition: filter 120ms ease, opacity 120ms ease;
+  opacity: 0.9;
+}
+
+.dropdown-menu .dropdown-item:hover .theme-icon,
+.dropdown-menu .dropdown-item:focus .theme-icon,
+.dropdown-menu .dropdown-item.active .theme-icon {
+  filter: grayscale(0%) brightness(1.1);
+  opacity: 1;
+}
+
+/* Floating trigger icon hover */
+.bd-mode-toggle .btn .theme-icon-active {
+  transition: filter 120ms ease, opacity 120ms ease;
+}
+
+.bd-mode-toggle .btn:hover .theme-icon-active,
+.bd-mode-toggle .btn:focus .theme-icon-active {
+  filter: brightness(1.1) contrast(1.05);
+}
+
+/* Force icons to appear white in dark mode (for external SVGs not inheriting currentColor) */
+[data-bs-theme="dark"] .dropdown-menu .dropdown-item .theme-icon,
+[data-bs-theme="dark"] .bd-mode-toggle .theme-icon-active {
+  filter: invert(1) brightness(1.2) contrast(1);
+}
+[data-bs-theme="dark"] .dropdown-menu .dropdown-item:hover .theme-icon,
+[data-bs-theme="dark"] .dropdown-menu .dropdown-item:focus .theme-icon,
+[data-bs-theme="dark"] .dropdown-menu .dropdown-item.active .theme-icon,
+[data-bs-theme="dark"] .bd-mode-toggle .btn:hover .theme-icon-active,
+[data-bs-theme="dark"] .bd-mode-toggle .btn:focus .theme-icon-active {
+  filter: invert(1) brightness(1.4) contrast(1.05);
+}
+
+/* In dark dropdown, the active item uses a light/white background: keep its icon dark for contrast */
+[data-bs-theme="dark"] .dropdown-menu-dark .dropdown-item.active .theme-icon {
+  filter: none !important;
+}
+[data-bs-theme="dark"] .dropdown-menu-dark .dropdown-item[aria-pressed="true"] .theme-icon {
+  filter: none !important;
+}
+
+/* Brand Orange utilities */
+:root {
+  --brand-orange: rgb(210, 50, 1);
+  --brand-orange-contrast: #fff;
+  --brand-orange-hover: rgb(185, 45, 1);
+  --brand-orange-active: rgb(160, 38, 0);
+  --brand-orange-shadow: rgba(210, 50, 1, 0.35);
+  --chatbot-width: 420px;
+}
+
+.btn-orange {
+  --bs-btn-color: var(--brand-orange-contrast);
+  --bs-btn-bg: var(--brand-orange);
+  --bs-btn-border-color: var(--brand-orange);
+  /* Keep hover colors same by default; we'll override for non-chatbot buttons later if needed */
+  --bs-btn-hover-color: var(--brand-orange-contrast);
+  --bs-btn-hover-bg: var(--brand-orange);
+  --bs-btn-hover-border-color: var(--brand-orange);
+  --bs-btn-focus-shadow-rgb: 210, 50, 1;
+  --bs-btn-active-color: var(--brand-orange-contrast);
+  --bs-btn-active-bg: var(--brand-orange);
+  --bs-btn-active-border-color: var(--brand-orange);
+}
+
+.border-orange {
+  border-color: var(--brand-orange) !important;
+}
+
+/* When chatbot sidebar is open, push the page content left so both are visible */
+html[data-chatbot-open="true"] body {
+  margin-right: var(--chatbot-width); /* matches sidebar width */
+  transition: margin-right 150ms ease;
+}
+
+@media (max-width: 991.98px) {
+  html[data-chatbot-open="true"] body {
+    margin-right: 0; /* on small screens, don't push to avoid layout issues */
+  }
+}
+
+/* Chatbot toggle icon visibility tweaks */
+.btn.btn-warning.rounded-circle img,
+.btn.btn-orange.rounded-circle img {
+  transition: filter 120ms ease;
+}
+[data-bs-theme="light"] .btn.btn-warning.rounded-circle img,
+[data-bs-theme="light"] .btn.btn-orange.rounded-circle img {
+  filter: brightness(1) contrast(1);
+}
+[data-bs-theme="dark"] .btn.btn-warning.rounded-circle img,
+[data-bs-theme="dark"] .btn.btn-orange.rounded-circle img {
+  filter: invert(1) brightness(1.2);
+}
+
+/* Chatbot toggle: scale on hover, keep color unchanged */
+.chatbot-toggle {
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+.chatbot-toggle:hover,
+.chatbot-toggle:focus-visible {
+  transform: scale(1.08);
+}
+.chatbot-toggle img {
+  transition: transform 140ms ease;
+}
+.chatbot-toggle:hover img,
+.chatbot-toggle:focus-visible img {
+  transform: scale(1.1);
+}
+
+/* Theme switcher button: grey border by default, white/black when pressed */
+.theme-switcher-btn {
+  transition: border-color 150ms ease;
+}
+[data-bs-theme="dark"] .theme-switcher-btn:active,
+[data-bs-theme="dark"] .theme-switcher-btn[aria-expanded="true"] {
+  border-color: #fff !important;
+}
+[data-bs-theme="light"] .theme-switcher-btn:active,
+[data-bs-theme="light"] .theme-switcher-btn[aria-expanded="true"] {
+  border-color: #000 !important;
+}

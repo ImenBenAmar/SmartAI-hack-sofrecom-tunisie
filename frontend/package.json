@@ -1,0 +1,37 @@
+{
+  "name": "smartmail-ai",
+  "version": "0.1.0",
+  "private": true,
+  "main": "electron/main.js",
+  "scripts": {
+    "dev:web": "next dev --port 3000 --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "eslint",
+    "dev:desktop": "cross-env NODE_ENV=development concurrently \"npm:dev:web\" \"wait-on http-get://localhost:3000 && electron .\""
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "boosted": "^5.3.7",
+    "firebase": "^12.4.0",
+    "next": "15.5.4",
+    "next-auth": "^4.24.11",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20.19.21",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "concurrently": "^8",
+    "cross-env": "^7",
+    "electron": "^31",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.4",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "wait-on": "^7"
+  }
+}
