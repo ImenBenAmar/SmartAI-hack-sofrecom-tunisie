@@ -484,7 +484,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## 👥 Team
 
-Built with ❤️ by the SmartMail AI Team for Sofrecom Tunisia Hackathon 2025
+ @ImenBenAmar  @YomnaJL   @	fakhfakheya  @jerbi86
 
 ## 📞 Support
 
