@@ -486,12 +486,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
  @ImenBenAmar  @YomnaJL   @	fakhfakheya  @jerbi86
 
-## 📞 Support
-
-For questions, issues, or feature requests:
-- **Open an Issue**: [GitHub Issues](https://github.com/your-username/projet_email_automation/issues)
-- **Documentation**: Check [Frontend README](frontend/README.md) and [Backend README](backend/README.md)
-- **Email**: your-email@example.com
 
 ## 🌟 Star Us!
 
